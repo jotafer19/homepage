@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 10svh;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+}
+
+.main-nav ul{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.introduction {
+  height: 90svh;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.text {
+  border-right: .15rem solid black;
+  overflow-x: hidden;
+  letter-spacing: .15rem;
+  animation: 
+    typing 3s steps(42, end),
+    blink-caret 1s step-end infinite 3s;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from {
+    border-color: transparent;
+  }  
+
+  50% {
+    border-color: black;
+  }
+
+  to {
+    border-color: transparent;
+  }
+}
+
+.go-down {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  animation: slide 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+section {
+  padding: 1rem;
+}
+
+h2 {
+  padding: .5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 8px black;
+}
+
+.about-me {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.style-wrapper {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #2084ac;
+  transform: skewY(-15deg) translateY(-65%);
+}
+
+.image-container {
+  max-width: 300px;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-container h1 {
+  padding: .5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-size: 3.2rem;
+  text-shadow: 4px 4px 20px black;
+}
+
+.description-container {
+  max-width: 500px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 24px;
+  height: auto;
+}
+
+.projects {
+  background-color: gainsboro;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.card {
+  width: 500px;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.battle-image {
+  width: 500px;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.battle-information {
+  padding: .5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.battle-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-info h2 {
+  padding: 0;
+}
+
+.contact-phone,
+.contact-email,
+.contact-icons {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.contact-icons {
+  gap: 1rem;
+}
+
+.contact-photo img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
