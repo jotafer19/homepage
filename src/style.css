@@ -1,7 +1,18 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Medium.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 .header {
@@ -93,18 +104,22 @@
   }
 }
 
+:root {
+  --background-color: #18779c;
+}
+
 section {
   padding: 1rem;
 }
 
 h2 {
-  padding: .5rem;
+  padding: 1rem;
   text-align: center;
   font-size: 2rem;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2rem;
 }
 
@@ -113,12 +128,12 @@ p {
 }
 
 .about-me {
+  padding-top: 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 }
 
 .style-wrapper {
@@ -128,8 +143,8 @@ p {
   top: 0;
   left: 0;
   z-index: -1;
-  background-color: #2084ac;
-  transform: skewY(-15deg) translateY(-65%);
+  background-color: var(--background-color);
+  transform: skewY(-15deg) translateY(-70%);
 }
 
 .image-container {
@@ -140,6 +155,7 @@ p {
 .image-container img {
   width: 100%;
   object-fit: cover;
+  filter: brightness(90%);
 }
 
 .image-container h1 {
@@ -169,42 +185,41 @@ p {
   gap: 1rem;
 }
 
+a .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .icon {
   width: 24px;
   height: auto;
 }
 
-.projects {
-  background-color: gainsboro;
+.my-battles {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.cards-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4rem;
+.battles-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
-.card {
-  width: 500px;
-  background-color: white;
-  border-radius: 1rem;
-}
-
-.battle-image {
-  width: 500px;
-  height: 250px;
+.battle-image{
+  width: 100%;
   object-fit: cover;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 
-.battle-information {
-  padding: .5rem 1rem;
+.battle-description {
+  padding: .5rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .75rem;
 }
 
 .battle-title-container {
@@ -213,40 +228,48 @@ p {
   align-items: center;
 }
 
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
+.battle-title-container .icons-container {
+  gap: .1rem;
+}
+
+.battle-description p {
+  font-size: .8rem;
+  line-height: normal;
+}
+
+.contact {
+  padding: 0;
+  background-color: var(--background-color);
 }
 
 .contact-info {
+  padding: 2rem;
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
   gap: 1rem;
 }
 
 .contact-info h2 {
   padding: 0;
+  margin-bottom: 1rem;
 }
 
 .contact-phone,
-.contact-email,
-.contact-icons {
+.contact-email {
   display: flex;
-  align-items: center;
   gap: .25rem;
 }
 
-.contact-icons {
-  gap: 1rem;
+.photo-container {
+  max-width: 500px;
+  height: auto;
 }
 
-.contact-photo img {
-  width: 300px;
-  height: 300px;
+.contact-image {
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
+  display: block;
 }
