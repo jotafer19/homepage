@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+:root {
+  --background-color: #0c79a4;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,99 +17,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-.header {
-  height: 10svh;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: aquamarine;
-}
-
-.logo {
-  width: 50px;
-  height: auto;
-  object-fit: contain;
-}
-
-.main-nav ul{
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 1rem;
-}
-
-.link {
-  cursor: pointer;
-}
-
-.introduction {
-  height: 90svh;
-  background-color: blanchedalmond;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.text {
-  border-right: .15rem solid black;
-  overflow-x: hidden;
-  letter-spacing: .15rem;
-  animation: 
-    typing 3s steps(42, end),
-    blink-caret 1s step-end infinite 3s;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from {
-    border-color: transparent;
-  }  
-
-  50% {
-    border-color: black;
-  }
-
-  to {
-    border-color: transparent;
-  }
-}
-
-.go-down {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  animation: slide 1.2s ease-in-out infinite alternate;
-}
-
-@keyframes slide {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-50%);
-  }
-}
-
-:root {
-  --background-color: #18779c;
 }
 
 section {
@@ -120,7 +31,7 @@ h2 {
 
 p {
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
 
 .box-shadow {
@@ -147,6 +58,16 @@ p {
   transform: skewY(-15deg) translateY(-70%);
 }
 
+.description-container {
+  max-width: 1000px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .image-container {
   max-width: 300px;
   position: relative;
@@ -155,6 +76,7 @@ p {
 .image-container img {
   width: 100%;
   object-fit: cover;
+  display: block;
   filter: brightness(90%);
 }
 
@@ -164,17 +86,13 @@ p {
   bottom: 0;
   left: 0;
   color: white;
-  font-size: 3.2rem;
+  font-size: 3rem;
   text-shadow: 4px 4px 20px black;
 }
 
-.description-container {
-  max-width: 500px;
-  padding: 1rem;
+.content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 
@@ -242,6 +160,11 @@ a .icon {
   background-color: var(--background-color);
 }
 
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .contact-info {
   padding: 2rem;
   color: white;
@@ -272,4 +195,101 @@ a .icon {
   height: auto;
   object-fit: cover;
   display: block;
+}
+
+@media screen and (min-width: 500px) {
+  .style-wrapper {
+    transform: skewY(-15deg) translateY(-30%);
+  }
+
+  .description-container {
+    display: block;
+  }
+
+  .image-container {
+    float: left;
+    max-width: 250px;
+    max-height: 384px;
+    margin: 0 14px 10px 0;
+  }
+
+  .image-container img {
+    width: 250;
+    height: 384px;
+  }
+
+  .image-container h1 {
+    padding: 0;
+    top: -8%;
+    left: 28%;
+    bottom: unset;
+    white-space: nowrap;
+  }
+
+  .content {
+    max-width: 900px;
+    display: block;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 2px 2px 8px black;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  .content .icons-container {
+      justify-content: flex-end;
+      margin-top: 1rem;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+  .contact-info {
+    align-self: start;
+  }
+
+  .contact-info h2 {
+    text-align: left;
+  }
+
+  .photo-container {
+    padding: 2rem;
+  }
+
+  .photo-container img {
+    max-height: 450px;
+  }
+
+  .contact-info .icons-container {
+    justify-content: flex-start ;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  h2 {
+    text-align: left;
+  }
+
+  .image-container h1 {
+    padding: .5rem;
+    white-space: wrap;
+    top: unset;
+    left: unset;
+    bottom: 0;
+    left: 0;
+  }
+
+  .photo-container {
+    width: 500px;
+    height: 376px;
+  }
+
+  .photo-container img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
